@@ -1,4 +1,4 @@
-mkdir ./AddPartner/"${a[1]}"
+mkdir AddPartner/"${a[1]}"
 
 sed "s/PARTNERNAME/${a[1]}/;s/DEFAULTROUTINGID/${a[2]}/;s/PRIMARYNAME/${a[3]}/;s/EMAILADDRESS/${a[4]}/;s/PHONENUMBER/${a[5]}/" ./conf/addPartner.json > ./AddPartner/"${a[1]}"/"${a[1]}".json
 
