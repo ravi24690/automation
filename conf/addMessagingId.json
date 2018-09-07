@@ -1,0 +1,11 @@
+{
+    "@class": "X12MessagingId",
+    "applicationId": "#{_('data.google_sheets.new_spreadsheet_row_v4.columns.col_14')}",
+    "enabled": true,
+    "interchangeId": "#{_('data.google_sheets.new_spreadsheet_row_v4.columns.col_13')}",
+    "interchangeIdQualifier": "#{_('data.google_sheets.new_spreadsheet_row_v4.columns.col_12')}",
+    "name": "X12_#{_('data.google_sheets.new_spreadsheet_row_v4.columns.col_2')}_1001",
+    "primary": true,
+    "processingMode": "ISA_AND_GS_MODE",
+    "routingId": "#{_('data.google_sheets.new_spreadsheet_row_v4.columns.col_12')}:#{_('data.google_sheets.new_spreadsheet_row_v4.columns.col_13')}:#{_('data.google_sheets.new_spreadsheet_row_v4.columns.col_14')}"
+}

@@ -1,0 +1,8 @@
+{
+	"resourceName": "MAPNAME",
+        "resourceType": "3",
+        "processingStepEnabled": true,
+        "processingStepName": "MAPNAME",
+        "processingStepType": "Map",
+        "processingStepAddOutput": false
+}

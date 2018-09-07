@@ -1,0 +1,14 @@
+{
+	"@class": "PartnerDocumentService",
+        "name": "SERVICENAME",
+        "deliveryMethod": null,
+        "enabled": true,
+        "componentId": "COMPONENTID",
+        "exchangePointId": null,
+        "exchangePoint": null,
+        "documentFormat": "XML",
+        "documentVersion": "1.0",
+        "documentType": "OCUPOA",
+        "postDetectionComponentId": null,
+        "postDetectionComponent": null
+}

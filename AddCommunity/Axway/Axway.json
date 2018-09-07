@@ -1,0 +1,16 @@
+{
+    "defaultRoutingId": {
+        "routingId": "AXWAY",
+        "type": ""
+    },
+    "enabled": true,
+    "partyName": "Axway",
+    "primaryContact": {
+        "email": "akesharwani@axway.com",
+        "name": "Abhishek",
+        "notes": null,
+        "phone": "",
+        "primary": true,
+        "title": null
+    }
+}

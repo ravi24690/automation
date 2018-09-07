@@ -1,0 +1,15 @@
+{
+"enabled": true,
+"partyName": "PARTNERNAME",
+"defaultRoutingId": {
+"routingId": "DEFAULTROUTINGID"
+},
+"primaryContact": {
+"primary": true,
+"name": "PRIMARYNAME",
+"email": "EMAILADDRESS",
+"phone": "PHONENUMBER",
+"notes": "",
+"title": ""
+}
+}

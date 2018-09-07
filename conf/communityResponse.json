@@ -1,0 +1,44 @@
+{
+    "count": 1,
+    "results": [
+        {
+            "@id": "31001",
+            "certificates": "/v1/communities/security/31001/certificate/private",
+            "countryCode": null,
+            "defaultDelivery": "/v1/communities/exchange/trading/delivery/38004",
+            "defaultEncryptionCertificate": "/v1/communities/security/certificate/35501",
+            "defaultPGPCertificate": null,
+            "defaultRoutingId": {
+                "@id": "33501",
+                "routingId": "AXWAY_WINDOWS",
+                "type": ""
+            },
+            "defaultSigningCertificate": "/v1/communities/security/certificate/35501",
+            "defaultSshKey": null,
+            "defaultSslCertificate": null,
+            "enabled": true,
+            "ftpUsers": "/v1/communities/31001/ftpUser",
+            "integrationDeliveries": "/v1/communities/31001/deliverySettings",
+            "partyName": "Axway_Windows",
+            "pgpCertificates": "/v1/communities/security/31001/certificate/pgp/public",
+            "primaryContact": {
+                "@id": "34501",
+                "email": "ravi24690@gmail.com",
+                "name": "Axway_Windows",
+                "notes": null,
+                "phone": "",
+                "primary": true,
+                "title": null
+            },
+            "routingIds": "/v1/communities/31001/routingIds",
+            "sshKeys": "/v1/communities/security/31001/sshkeys",
+            "sshUsers": "/v1/communities/31001/sshUser",
+            "subscribedPartners": "/v1/communities/31001/subscriptions",
+            "tradingDeliveryExchanges": "/v1/communities/exchange/31001/trading/delivery",
+            "tradingPickupExchanges": "/v1/communities/exchange/31001/trading/pickup",
+            "trustedCertificates": "/v1/communities/security/31001/certificate/?usage=trading",
+            "trustedSslCertificates": "/v1/communities/security/31001/certificate/?usage=transport",
+            "wsusers": "/v1/communities/31001/wsUsers"
+        }
+    ]
+}

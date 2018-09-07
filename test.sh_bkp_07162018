@@ -1,0 +1,72 @@
+#!/bin/sh
+
+touch ./output/out.csv
+rm ./output/out.csv
+
+java -cp classes:jar/ojdbc7.jar com.partner.DBRetrieval
+
+count=0
+while read line
+do
+count=`expr $count + 1`
+clear
+
+for i in {1..6}
+do
+a[i]=`echo $line | cut -d',' -f$i`
+done
+
+mkdir ./AddPartner/"${a[1]}"
+
+sed "s/PARTNERNAME/${a[1]}/;s/DEFAULTROUTINGID/${a[2]}/;s/PRIMARYNAME/${a[3]}/;s/EMAILADDRESS/${a[4]}/;s/PHONENUMBER/${a[5]}/" ./conf/addPartner.json > ./AddPartner/"${a[1]}"/"${a[1]}".json
+
+URL="http://10.151.14.55:6080/api"
+
+curl \
+-H "Accept: application/json" \
+-H "Content-Type:application/json" \
+-u "admin:Axway123" \
+-X POST --data @./AddPartner/"${a[1]}"/"${a[1]}".json "$URL/v1/tradingPartners" | python -m json.tool > ./AddPartner/"${a[1]}"/"${a[1]}"_response.json
+
+if grep -q "ERROR" ./AddPartner/"${a[1]}"/"${a[1]}"_response.json
+then
+printf "%*s\n" $[$(tput cols)/2] "ERROR: Partner ${a[1]} could not be added. Check the response file for more details."
+sed -n "${count}s/$/FAILED,/p" ./input/in.csv >> ./output/out.csv
+rm -rf ./AddPartner/"${a[1]}"
+sleep 3
+continue
+status=0
+clear
+else
+printf "%*s\n" $[$(tput cols)/2] "Partner ${a[1]} added successfully"
+sed -n "${count}s/$/SUCCESS,/p" ./input/in.csv >> ./output/out.csv
+sleep 1
+fi
+
+if [ "${a[6]}" == "null" ]
+then
+printf "%*s\n" $[$(tput cols)/2] "No community subscribed."
+sleep 3
+else
+curl -u "admin:Axway123" -X GET "$URL/v1/communities" | python -m json.tool > conf/communityResponse.json
+
+SUBSCRIPTION=`java -cp classes:jar/fasterxml-core.jar:jar/fasterxml-databind.jar:jar/jackson-annotations-2.1.2.jar:jar/json-simple-1.1.jar com.partner.GetId PARTNER ${a[1]} subscribedCommunities`
+
+COM_ID=`java -cp classes:jar/fasterxml-core.jar:jar/fasterxml-databind.jar:jar/jackson-annotations-2.1.2.jar:jar/json-simple-1.1.jar com.partner.GetId COMMUNITY ${a[6]} @id`
+
+curl \
+-H "Accept: application/json" \
+-H "Content-Type:application/json" \
+-u "admin:Axway123" \
+-X POST "$URL$SUBSCRIPTION?communityId=$COM_ID" | python -m json.tool > ./AddPartner/"${a[1]}"/"${a[1]}"_subscriptionResponse.json
+
+printf "%*s\n" $[$(tput cols)/2] "Partner ${a[1]} successfully subscribed to ${a[6]} community."
+sleep 3
+
+fi
+
+rm -rf ./AddPartner/"${a[1]}"
+
+done < ./input/in.csv
+
+clear

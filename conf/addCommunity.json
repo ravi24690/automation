@@ -1,0 +1,16 @@
+{
+    "defaultRoutingId": {
+        "routingId": "COMMUNITYID",
+        "type": ""
+    },
+    "enabled": true,
+    "partyName": "COMMUNITYNAME",
+    "primaryContact": {
+        "email": "EMAILADDRESS",
+        "name": "CONTACTNAME",
+        "notes": null,
+        "phone": "",
+        "primary": true,
+        "title": null
+    }
+}

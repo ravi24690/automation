@@ -1,0 +1,41 @@
+{
+    "count": 3,
+    "results": [
+        {
+            "@id": "132509",
+            "componentId": "131013",
+            "configurations": "/v1/components/131013/configurations",
+            "processingStepAddOutput": false,
+            "processingStepEnabled": true,
+            "processingStepName": "B2BX Application/XML2JSON",
+            "processingStepType": "Map",
+            "resourceAbsFilePath": null,
+            "resourceName": "B2BX Application/XML2JSON",
+            "resourceType": "1"
+        },
+        {
+            "@id": "132504",
+            "componentId": "131008",
+            "configurations": "/v1/components/131008/configurations",
+            "processingStepAddOutput": false,
+            "processingStepEnabled": true,
+            "processingStepName": "B2BX Application/XPathDetector",
+            "processingStepType": "Detector",
+            "resourceAbsFilePath": "%CORE_SOLUTIONS%\\b2bx\\component\\b2bx_xpathdetector.jar",
+            "resourceName": "B2BX Application/XPathDetector",
+            "resourceType": "1"
+        },
+        {
+            "@id": "132510",
+            "componentId": "131014",
+            "configurations": "/v1/components/131014/configurations",
+            "processingStepAddOutput": false,
+            "processingStepEnabled": true,
+            "processingStepName": "MAPSERVICE.855_4010_ADI.MF_855_4010_ADI",
+            "processingStepType": "Map",
+            "resourceAbsFilePath": null,
+            "resourceName": "MAPSERVICE.855_4010_ADI.MF_855_4010_ADI",
+            "resourceType": "3"
+        }
+    ]
+}

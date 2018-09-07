@@ -1,0 +1,79 @@
+<!-- AS2 Details Begin-->
+{
+    "@class": "HTTPProducer",
+    "backupMessages": true,
+    "businessProtocol": "AS2",
+    "cipherSuites": null,
+    "connectTimeoutSeconds": 30,
+    "customRetryIntervals": null,
+    "enable102Processing": false,
+    "enableChunking": false,
+    "enableHostNameVerification": false,
+    "enableRestarts": false,
+    "enabled": true,
+    "friendlyName": "ROUTINGID_AS2_Delivery",
+    "holdMessagesForPickup": false,
+    "maxConcurrentConnections": 100,
+    "overrideCipherSuites": false,
+    "postProcessingScript": null,
+    "proxy": null,
+    "readTimeoutSeconds": 30,
+    "responseTimeoutSeconds": 300,
+    "retries": 3,
+    "ssl": false,
+    "url": "URL",
+    "useCustomRetryIntervals": false,
+    "usernamePasswordCredentials": null
+}
+<!-- AS2 Details End-->
+
+<!-- SFTP Details Begin-->
+{
+    "@class": "SFTPProducer",
+    "backupMessages": true,
+    "businessProtocol": "Raw",
+    "duplicateFileNameMode": "OVERWRITE",
+    "enabled": true,
+    "encodedHostPublicKey": "SSHKEYS",
+    "fileCollisionMode": "USE_USE_NONE",
+    "friendlyName": "PARTNERNAME_SFTP_Delivery",
+    "host": "SFTPHOSTNAME",
+    "passwordAuthentication": true,
+    "pickupDirectory": "SFTPDIRECTORY",
+    "port": SFTPPORT,
+    "usernamePasswordCredentials": {
+        "password": "SFTPPASSWORD",
+        "username": "SFTPUSERNAME"
+    }
+}
+<!-- SFTP Details End-->
+
+<!-- FTP Details Begin-->
+{
+    "@class": "FTPProducer",
+    "businessProtocol": "Raw",
+    "connectTimeoutSeconds": 30,
+    "enabled": true,
+    "fileCollisionMode": "USE_USE_NONE",
+    "friendlyName": "PARTNERNAME_FTP_Delivery",
+    "host": "FTPHOSTNAME",
+    "pickupDirectory": "FTPDIRECTORY",
+    "port": FTPPORT,
+    "readTimeoutSeconds": 30,
+    "usernamePasswordCredentials": {
+        "password": "FTPPASSWORD",
+        "username": "FTPUSERNAME"
+    }
+}
+<!-- FTP Details End-->
+
+<!-- FILESYSTEM Details Begin-->
+{
+    "@class": "FileSystemProducer",
+    "enabled": true,
+    "businessProtocol": "Raw",
+    "friendlyName": "PARTNERNAME_Delivery",
+    "backupMessages": true,
+    "directory": "FILESYSTEMDIRECTORY"
+}
+<!-- FILESYSTEM Details End-->
