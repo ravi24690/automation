@@ -16,7 +16,7 @@ while read line
 do
 count=`expr $count + 1`
 clear
-echo "Hello"
+echo "Hello, I have changed the comment"
 for i in $(seq 1 15)
 do
 a[i]=`echo $line | cut -d',' -f$i`
